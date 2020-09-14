@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using static System.Console;
 namespace CSharp.Assignments.Loop1
 {
@@ -24,6 +28,26 @@ namespace CSharp.Assignments.Loop1
         {
             // prompt user for non-negative miles and obtain the input from user
             // codes go here.
+
+            int miles, galoon;
+            double mileage = 0;
+            int total_miles = 0, total_gallon = 0, tankfuls = 1;
+
+            do
+            {
+                Console.WriteLine("Enter miles driver (negative number to exit ) for tankfuls No : " + tankfuls);
+                miles = Convert.ToInt32(Console.ReadLine());
+                if (miles <= 0)
+                    break;
+                Console.WriteLine("Enter used galoon for tankfuls No : " + tankfuls);
+                galoon = Convert.ToInt32(Console.ReadLine());
+                total_miles = total_miles + miles;
+                total_gallon = total_gallon + galoon;
+                tankfuls++;
+            } while (miles > 0);
+            mileage = Convert.ToDouble(total_miles) / total_gallon;
+            Console.WriteLine("the mileage is : " + mileage + " per galoon");
+
         }
     }
 }

@@ -17,6 +17,26 @@ namespace CSharp.Assignments.Loop1
         public static void Main()
         {
             // Write your codes here
+            string line;
+            int clumb = 0, count = 0;
+            Console.WriteLine("Enter bunch of integers  (press CTRL+Z to exit):");
+            Console.WriteLine();
+            do
+            {
+                Console.Write("   ");
+                line = Console.ReadLine();
+                if (line != null)
+                {
+                    // convert to integer
+                    int val = Convert.ToInt32(line);
+
+                    if (val == clumb)
+                        count++;
+                    clumb = val;
+                }
+
+            } while (line != null);
+            Console.WriteLine("  The counts of clumbs    " + count);
         }
     }
 }

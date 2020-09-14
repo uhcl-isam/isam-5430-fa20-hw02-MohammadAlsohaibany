@@ -25,11 +25,97 @@ namespace CSharp.Assignments.Loop1
         public static void Main()
         {
             Console.Error.WriteLine("Type 'a' = lower left triangle; 'b' = upper left triangle; 'c' = upper right triangle; 'd' = lower right triangle.");
-            char t = Convert.ToChar(Console.ReadLine());
+            char triangle = Convert.ToChar(Console.ReadLine());
             Console.Error.WriteLine("Enter the number of lines.");
             int n = Convert.ToInt32(Console.ReadLine());
 
             // Write your codes here.
+            //Console.ReadLine();
+
+            // for a
+            if (triangle == 'a')
+            {
+                int i = 1;
+                while (i <= n)
+                {
+                    int j = 1;
+                    while (j <= i)
+                    {
+                        Console.Error.Write("*");
+                        Console.Error.WriteLine("");
+                        j++;
+                    }
+                    i++;
+                }
+            }
+
+            // for b
+            else if (triangle == 'b')
+            {
+                int i = n;
+                while (i >= 1)
+                {
+                    int j = 1;
+                    while (j <= i)
+                    {
+                        Console.Error.Write("*");
+                        Console.Error.WriteLine("");
+                        j++;
+                    }
+                    i--;
+                }
+            }
+
+            // for c
+            else if (triangle == 'c')
+            {
+                int i = n;
+                while (i >= 1)
+                {
+                    int j = n - i;
+                    while (j >= 1)
+                    {
+                        Console.Write(" ");
+                        j--;
+                    }
+
+                    int k = i;
+                    while (k >= 1)
+                    {
+                        Console.Write("*");
+                        k--;
+                    }
+                    Console.WriteLine("");
+                    i--;
+                }
+            }
+            
+            // for d
+            else if (triangle == 'd')
+            {
+                int i = 1;
+                while (i <= n)
+                {
+                    int j = 1;
+                    while (j <= n - i)
+                    {
+                        Console.Write(" ");
+                        j++;
+                    }
+
+                    int k = 1;
+                    while (k <= i)
+                    {
+                        Console.Write("*");
+                        k++;
+                    }
+
+                    Console.WriteLine("");
+                    i++;
+                }
+
+            }
+
             Console.ReadLine();
         }
     }

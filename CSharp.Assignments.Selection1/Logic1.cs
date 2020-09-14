@@ -14,7 +14,15 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool CigarParty(int cigars, bool isWeekend)
         {
-            throw new NotImplementedException();
+            if (isWeekend && (cigars >= 40))
+            {
+                return true;
+            }
+            else if (cigars >= 40 && cigars <= 60)
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -25,7 +33,34 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static int CaughtSpeeding(int speed, bool birthday)
         {
-            throw new NotImplementedException();
+            if (birthday && (speed <= 65))
+            {
+                return 0;
+            }
+            else if (birthday && (speed >= 66 && speed <= 85))
+            {
+                return 1;
+            }
+            else if (birthday && (speed >= 86))
+            {
+                return 2;
+            }
+
+            else if ((speed <= 60))
+            {
+                return 0;
+            }
+            else if ((speed >= 61 && speed <= 80))
+            {
+                return 1;
+            }
+            else if ((speed >= 81))
+            {
+                return 2;
+            }
+
+            return 0;
+
         }
 
         /// <summary>
@@ -36,7 +71,16 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool Love6(int a, int b)
         {
-            throw new NotImplementedException();
+            if (a == 6 || b == 6)
+            {
+                return true;
+            }
+            else if (a + b == 6 || (a - b == 6 || b - a == 6))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -46,7 +90,17 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool More20(int num)
         {
-            throw new NotImplementedException();
+            if (num % 20 == 1)
+            {
+                return true;
+            }
+
+            else if (num % 20 == 2)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -56,7 +110,12 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool NearTen(int num)
         {
-            throw new NotImplementedException();
+            if ((num % 10 == 1) || (num % 10 == 2) || (num % 10 == 8) || (num % 10 == 9) || (num % 10 == 0))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -67,7 +126,23 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static int TeaParty(int tea, int candy)
         {
-            throw new NotImplementedException();
+            if (tea < 5 || candy < 5)
+            {
+                return 0;
+            }
+
+            // Doesn't return 2 !!! >> ReORDER the Code
+            else if ((tea >= (candy * 2)) || (candy >= (tea * 2)))
+            {
+                return 2;
+            }
+
+            else if (tea >= 5 && candy >= 5)
+            {
+                return 1;
+            }
+
+            return 0;
         }
 
         /// <summary>
@@ -78,7 +153,15 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool SquirrelPlay(int temperature, bool isSummer)
         {
-            throw new NotImplementedException();
+            if (isSummer && (temperature >= 60 && temperature <= 100))
+            {
+                return true;
+            }
+            else if (temperature >= 60 && temperature <= 90)
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -95,7 +178,27 @@ namespace CSharp.Assignments.Loop1
         /// <returns>either: "7:00" or "10:00" or "off"</returns>
         public static string AlarmClock(DayOfWeek dayOfWeek, bool vacation)
         {
-            throw new NotImplementedException();
+            if (vacation && ((dayOfWeek == DayOfWeek.Sunday) || (dayOfWeek == DayOfWeek.Saturday)))
+            {
+                return "off";
+            }
+
+            else if (vacation && ((dayOfWeek == DayOfWeek.Monday) || (dayOfWeek == DayOfWeek.Tuesday) || (dayOfWeek == DayOfWeek.Wednesday) || (dayOfWeek == DayOfWeek.Thursday) || (dayOfWeek == DayOfWeek.Friday)))
+            {
+                return "10:00";
+            }
+
+            else if ((dayOfWeek == DayOfWeek.Sunday) || (dayOfWeek == DayOfWeek.Saturday))
+            {
+                return "10:00";
+            }
+
+            else if ((dayOfWeek == DayOfWeek.Monday) || (dayOfWeek == DayOfWeek.Tuesday) || (dayOfWeek == DayOfWeek.Wednesday) || (dayOfWeek == DayOfWeek.Thursday) || (dayOfWeek == DayOfWeek.Friday))
+            {
+                return "7:00";
+            }
+
+            return "7:00";
         }
 
 
@@ -108,7 +211,17 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
         {
-            throw new NotImplementedException();
+            if (isAsleep)
+            {
+                return false;
+            }
+
+            else if (isMom || !isMorning)
+            {
+                return true;
+            }
+
+            return false;
         }
 
 
@@ -134,7 +247,17 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool CloseFar(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            if (Math.Abs (a - b) <= 1 && Math.Abs (a - c) >=2 && Math.Abs (b - c) >= 2)
+            {
+                return true;
+            }
+
+            else if (Math.Abs(a - c) <= 1 && Math.Abs(a - b) >= 2 && Math.Abs(b - c) >= 2)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

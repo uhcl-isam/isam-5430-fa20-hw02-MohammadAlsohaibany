@@ -22,8 +22,48 @@ namespace CSharp.Assignments.Loop1
     {
         public static void Main()
         {
+            /*
+             * Set int values to Zero
+             * Prompt the user to input 10 integers
+             * Loop until the 10th entry
+             * If number is more than the largest number
+             * Set 2nd Largest number equal to largest number & set largest number equal to number
+             * else if number is more than the 2nd largest number
+             * Set 2nd Largest number equal to number
+             * Print Largest Number
+             * Print 2nd Largest Number
+             */
+
+
             // get first number and assign it to variable largest
             // write your codes here
+
+            int i = 0, num = 0, largest_num1 = 0, largest_num2 = 0;
+
+            // To keep tracking the largest value
+            largest_num1 = int.MinValue;
+
+            while (i < 10)
+            {
+                Console.Error.WriteLine("Enter an Integer");
+                num = int.Parse(Console.ReadLine());
+                i++;
+
+                if (num > largest_num1)
+                {
+                    largest_num2 = largest_num1;
+                    largest_num1 = num;
+                }
+
+                else if (num > largest_num2)
+                {
+                    largest_num2 = num;
+                }
+            }
+
+            Console.WriteLine($"The Largest Entered Number is {largest_num1}");
+            Console.WriteLine($"The Second Largest Entered Number is {largest_num2}");
+
         }
     }
 }
