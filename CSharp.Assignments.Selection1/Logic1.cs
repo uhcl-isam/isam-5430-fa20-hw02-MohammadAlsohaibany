@@ -235,7 +235,7 @@ namespace CSharp.Assignments.Loop1
         /// <param name="number">Number.</param>
         public static bool IsHilly(int number)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException();//
         }
 
         /// <summary>
